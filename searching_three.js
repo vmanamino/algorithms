@@ -1,40 +1,51 @@
-var main = 0;
-
-for (var main = 0; main < 1000; main += 100){
-  var ddclass = 0;
-  if (main){
-    ddclass = main/100;
-  }
-//   console.log(ddclass);
-  for (var div = 0; div < 100; div += 10){
-    var dddiv = 0;
-    if (div){
-      dddiv = div/10
-    }
-//     console.log(ddclass+''+dddiv)
-    for (var specific = 0; specific < 10; specific++){
-//       console.log(ddclass+''+dddiv+''+specific)
-    }
-  }
-}
-
-var item = 110;
-
-var findFast = function(item){
-  var specific = 0;
-  var itemSpecific = item % 10;
+// for (var main = 0; main < 1000; main += 100){
+//   var ddclass = 0;
+//   if (main){
+//     ddclass = main/100;
+//   }
   
-  while (specific < 10){
-    if (specific){
-      if (itemSpecific <= specific) {
-        
-        specific = 10;
+// }
+
+var item = 212;
+
+var item2 = 013;
+
+var checkFast = function(item){
+  ddclass = 0;
+  if (item == 100){
+    console.log('found')
+  }
+  else {
+    var specific = 0;
+    var itemSpecific = item % 10;
+    ddclass = item - (item % 100)    
+    var dddiv = (item % 100) - ((item % 100) % 10) 
+    var main = 0;
+    var div = 0;
+    if (item > 100){     
+      while (main < 1000){
+        if (ddclass == main){
+          main = 1000;
+        }
+        main += 100
+      }
+      while (div < 100){
+        if (dddiv == div){
+          console.log(div)
+          div = 100;
+        }
+        div += 10;
+      }
+      while (specific < 10){
+        if (itemSpecific == specific){
+          console.log(itemSpecific)
+          specific = 10;
+        }
+        specific++;
       }
     }
-    
-    specific++;
   }
-  
+  return (ddclass/100)+''+(dddiv/10)+''+itemSpecific;
 }
 
-console.log(findFast(item))
+console.log(checkFast(item));
