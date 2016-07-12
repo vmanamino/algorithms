@@ -14,8 +14,10 @@ var checkFast = function(item){
   console.log('item')
   console.log(item) 
   ddclass = 0;
+  var itemFound = '';
   if (item == 100){
-    console.log('found')
+    itemFound = "100";
+    return itemFound;
   }  
   else {
     var specific = 0;
@@ -52,8 +54,8 @@ var checkFast = function(item){
       }
     }     
   }
-  
-  return (ddclass/100)+''+(dddiv/10)+''+itemSpecific;
+  itemFound = (ddclass/100)+''+(dddiv/10)+''+itemSpecific;
+  return itemFound;
 }
 
 console.log(checkFast(item))
